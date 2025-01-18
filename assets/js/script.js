@@ -78,6 +78,7 @@ for (let i = 0; i < selectItems.length; i++) {
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
+
 const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
@@ -102,6 +103,8 @@ for (let i = 0; i < filterBtn.length; i++) {
   filterBtn[i].addEventListener("click", function () {
 
     let selectedValue = this.innerText.toLowerCase();
+    console.log(selectValue);
+    
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
 
