@@ -632,7 +632,7 @@ main {
   margin-bottom: 7px;
 }
 
-.testimonials-text {
+.testimonials-text, .project-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
@@ -645,7 +645,7 @@ main {
 }
 
 /**
- * #testimonials-modal
+ * #testimonials-modal Y #project-modal
  */
 
 .modal-container {
@@ -693,7 +693,8 @@ main {
   pointer-events: all;
 }
 
-.testimonials-modal {
+.testimonials-modal,
+.project-modal {
   background: var(--eerie-black-2);
   position: relative;
   padding: 15px;
@@ -707,7 +708,8 @@ main {
   z-index: 2;
 }
 
-.modal-container.active .testimonials-modal {
+.modal-container.active .testimonials-modal,
+.modal-container.active .project-modal {
   transform: scale(1);
   opacity: 1;
 }
@@ -744,6 +746,20 @@ main {
   margin-bottom: 15px;
   box-shadow: var(--shadow-2);
 }
+
+.modal-project-box {
+  background: var(--bg-gradient-onyx);
+  width: 100%;
+  max-width: 512px;
+  max-height: 619px;
+  overflow: hidden;
+  /* límite */
+ 
+  border-radius: 14px;
+  margin-bottom: 15px;
+  box-shadow: var(--shadow-2);
+}
+
 
 .modal-img-wrapper>img {
   display: none;
@@ -1046,7 +1062,7 @@ main {
 }
 
 .project-item>a:hover .project-img::before {
-  background: hsla(0, 0%, 0%, 0.5);
+  background: hsla(0, 0%, 100%, 0.5);
 }
 
 .project-item-icon-box {
@@ -1078,7 +1094,14 @@ main {
 
 .project-img img {
 
-  width: 120%;
+  width: 100%;
+  height: 207px;
+  object-fit: contain;
+  transition: var(--transition-1);
+}
+.project-img-small img {
+
+  width: 100%;
   height: 207px;
   object-fit: cover;
   transition: var(--transition-1);
@@ -1564,7 +1587,8 @@ textarea.form-input::-webkit-resizer {
     margin-left: 95px;
   }
 
-  .testimonials-text {
+  .testimonials-text, .project-text {
+    margin-left: 10px;
     line-clamp: 2;
     -webkit-line-clamp: 2;
   }
@@ -1577,6 +1601,15 @@ textarea.form-input::-webkit-resizer {
 
   .testimonials-modal {
     display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .project-modal {
+
     justify-content: flex-start;
     align-items: stretch;
     gap: 25px;
@@ -1598,6 +1631,9 @@ textarea.form-input::-webkit-resizer {
   .modal-avatar-box img {
     width: 65px;
   }
+
+
+
 
   .modal-img-wrapper>img {
     display: block;
@@ -1643,6 +1679,11 @@ textarea.form-input::-webkit-resizer {
   /**
    * #PORTFOLIO, BLOG
    */
+  .modal-project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .project-img,
   .blog-banner-box {
@@ -1730,7 +1771,8 @@ textarea.form-input::-webkit-resizer {
 
   /* testimonials modal */
 
-  .testimonials-modal {
+  .testimonials-modal,
+  .project-modal {
     gap: 35px;
     max-width: 680px;
   }
@@ -1739,9 +1781,18 @@ textarea.form-input::-webkit-resizer {
     width: 80px;
   }
 
+
+
+
   /**
    * PORTFOLIO
    */
+
+  .modal-project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .article-title {
     padding-bottom: 20px;
@@ -2038,4 +2089,61 @@ textarea.form-input::-webkit-resizer {
   .timeline-text {
     max-width: 700px;
   }
+}
+
+@media (max-width: 580px) {
+  .modal-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+
+  .modal-project-box {
+    background: var(--bg-gradient-onyx);
+    width: 100%;
+    max-width: 409px;
+     max-height: 619px;
+  overflow: hidden;
+    /* límite */
+    height: auto;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-2);
+  }
+
+  .modal-project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.modal-links {
+  display: none;
+  margin: 10px -10px 20px;
+  gap: 10px;
+}
+
+.modal-links.active {
+  display: flex;
+}
+
+.modal-btn {
+  padding: 8px 14px;
+  background: #4b4bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.modal-btn:hover {
+  background: #3030d0;
+}
+.hidden-info {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
 }
