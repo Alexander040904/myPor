@@ -5,15 +5,7 @@ Ideal para presentar tus proyectos, habilidades, experiencia y enlaces profesion
 
 ---
 
-## 📸 Demo
 
-### 🖥️ Vista Desktop
-![Vista Desktop](./website-demo-image/desktop.png)
-
-### 📱 Vista Mobile
-![Vista Mobile](./website-demo-image/mobile.png)
-
----
 
 ## 🚀 Características
 
